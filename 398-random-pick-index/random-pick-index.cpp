@@ -1,24 +1,25 @@
 class Solution {
-    vector<int> nums;
-
 public:
-    Solution(vector<int>& nums) {
-        this->nums = nums;
+    vector<int>nums;
+    Solution(vector<int>& v) {
+        nums=v;
     }
-
+    
     int pick(int target) {
-        int count = 0;
-        int result = -1;
-
-        for (int i = 0; i < nums.size(); ++i) {
-            if (nums[i] == target) {
-                count++;
-                // Pick current index with probability 1/count
-                if (rand() % count == 0) {
-                    result = i;
-                }
+        int index=-1;
+        while(1){
+            index=rand();
+            index%=nums.size();
+            if(nums[index]==target){
+                return index;
             }
         }
-        return result;
+        return -1;
     }
 };
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(nums);
+ * int param_1 = obj->pick(target);
+ */
