@@ -9,7 +9,7 @@ public:
                 currentCount++;  
                 maxCount = max(maxCount, currentCount);
             } else {
-                currentCount = 0;           // Reset on 0
+                currentCount = 0; 
             }
         }
 
