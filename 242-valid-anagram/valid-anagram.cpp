@@ -1,19 +1,21 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        if (s.length() != t.length()) return false;
 
-        unordered_map<char, int> freq;
+        if(s.length() != t.length()) return false;
 
-        // Count characters in s
-        for (char c : s) {
-            freq[c]++;
+        unordered_map<char,int> mp;
+
+        for(auto c : s){
+            mp[c]++;
         }
 
-        // Subtract counts using t
-        for (char c : t) {
-            freq[c]--;
-            if (freq[c] < 0) return false;
+        for(auto c : t){
+            mp[c]--;
+
+            if(mp[c] < 0){
+                return false;
+            }
         }
 
         return true;
