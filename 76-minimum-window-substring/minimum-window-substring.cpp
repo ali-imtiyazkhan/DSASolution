@@ -18,7 +18,6 @@ public:
                 have++;
             }
 
-            // Shrink window from the left if all chars are covered
             while (have == need) {
                 if (right - left + 1 < minLen) {
                     minLen = right - left + 1;
