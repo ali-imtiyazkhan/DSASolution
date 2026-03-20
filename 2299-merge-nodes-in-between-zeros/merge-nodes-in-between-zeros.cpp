@@ -1,25 +1,24 @@
 class Solution {
 public:
     ListNode* mergeNodes(ListNode* head) {
-       ListNode* temp = head->next;
-       ListNode* dummy = new ListNode(0);
-       ListNode* curr = dummy;
+        ListNode* modify = head;   
+        ListNode* temp = head->next; 
+        int sum = 0;
 
-       int sum = 0;
+        while (temp != nullptr) {
+            if (temp->val == 0) {
+               
+                modify->val = sum;
+                modify->next = temp->next; 
+                modify = modify->next;
 
-       while(temp != nullptr){
-        if(temp->val == 0){
-            curr->next = new ListNode(sum);
-            curr = curr->next;
-            sum = 0;
+                sum = 0;
+            } else {
+                sum += temp->val;
+            }
+            temp = temp->next;
         }
-        else{
-            sum += temp->val;
-        }
 
-        temp = temp->next;
-       } 
-
-       return dummy->next;
+        return head;
     }
 };
