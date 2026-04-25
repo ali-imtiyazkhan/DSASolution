@@ -8,10 +8,8 @@ public:
         int leftHeight = dfs(node->left);
         int rightHeight = dfs(node->right);
 
-        // Update the diameter at this node
         maxDiameter = max(maxDiameter, leftHeight + rightHeight);
 
-        // Return height of current node
         return 1 + max(leftHeight, rightHeight);
     }
 
