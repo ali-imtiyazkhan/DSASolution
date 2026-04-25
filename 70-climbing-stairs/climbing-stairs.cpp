@@ -10,7 +10,7 @@ public:
         int curr = prev1 + prev2;
 
         prev1 = prev2;
-       prev2 = curr;
+        prev2 = curr;
        } 
 
        return prev2;
