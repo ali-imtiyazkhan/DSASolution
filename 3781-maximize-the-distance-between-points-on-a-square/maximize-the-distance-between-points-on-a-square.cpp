@@ -28,7 +28,7 @@ public:
             bool ok = true;
 
             while (count < k) {
-                // Binary search: first index with perimeter dist >= d from last
+
                 int lo = last + 1, hi = start + n - 1, next = -1;
                 while (lo <= hi) {
                     int mid = (lo + hi) / 2;
@@ -43,12 +43,11 @@ public:
                 if (next == -1) { ok = false; break; }
 
                 if (manhattan(extPts[next], extPts[last]) >= d) {
-                    // Valid: take this point
+                
                     count++;
                     last = next;
                 } else {
-                    // Manhattan failed: advance last to next and retry
-                    // This skips the gap without linear scan
+
                     last = next;
                 }
             }
