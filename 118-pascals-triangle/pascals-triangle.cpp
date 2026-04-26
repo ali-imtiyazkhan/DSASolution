@@ -9,7 +9,7 @@ public:
 
             for (int r = 0; r <= n; ++r) {
                 row.push_back((int)val);
-                val = val * (n - r) / (r + 1);  // Efficient nCr update
+                val = val * (n - r) / (r + 1);
             }
 
             triangle.push_back(row);
