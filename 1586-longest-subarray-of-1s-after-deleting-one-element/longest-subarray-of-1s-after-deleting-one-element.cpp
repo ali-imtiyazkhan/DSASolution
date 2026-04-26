@@ -11,7 +11,6 @@ public:
                 left++;
             }
             
-            // subtract 1 because we must delete one element
             ans = max(ans, right - left);
         }
         
