@@ -16,9 +16,11 @@ public:
                 l2 = l2->next;
             }
 
-            curr->next = new ListNode(sum % 10);
-            carry = sum / 10;
-            curr = curr->next;
+           carry = sum/10;
+           sum = sum%10;
+
+           curr->next = new ListNode(sum);
+           curr = curr->next;
         }
 
         if (carry > 0) {
