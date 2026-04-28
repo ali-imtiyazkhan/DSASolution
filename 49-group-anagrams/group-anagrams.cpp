@@ -9,7 +9,6 @@ public:
                 count[c - 'a']++;
             }
 
-            // Convert count vector to string key
             string key;
             for (int i = 0; i < 26; i++) {
                 key += '#' + to_string(count[i]);
