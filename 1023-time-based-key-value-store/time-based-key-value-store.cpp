@@ -20,8 +20,8 @@ public:
             int mid = left + (right - left) / 2;
             
             if(vec[mid].first <= timestamp) {
-                ans = vec[mid].second; // valid candidate
-                left = mid + 1;        // try to find closer
+                ans = vec[mid].second; 
+                left = mid + 1; 
             } else {
                 right = mid - 1;
             }
